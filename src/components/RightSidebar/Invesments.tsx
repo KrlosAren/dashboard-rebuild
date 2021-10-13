@@ -54,8 +54,8 @@ const Complete = () => {
             data={data}
             options={options}
             className='donut'
-            width='150'
-            height='150'
+              width={150}
+            height={150}
           />
         </div>
       )}

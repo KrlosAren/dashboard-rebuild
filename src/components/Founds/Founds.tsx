@@ -37,7 +37,7 @@ const Founds = () => {
         <button onClick={handleCloseModal}>X</button>
       </div>
       <div className='addfound__container--form'>
-        <form>
+        <form onSubmit={handleSubmit}>
           <DropdownAssets
             options={assets}
             name='name'
@@ -53,9 +53,7 @@ const Founds = () => {
             placeholder='Amount US$'
           />
           {error && <p>{error}</p>}
-          <button type='submit' onClick={handleSubmit}>
-            Add
-          </button>
+          <button>Add</button>
         </form>
       </div>
     </div>

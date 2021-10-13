@@ -28,7 +28,7 @@ const options: NextAuthOptions = {
   ],
   secret: process.env.SECRET,
   callbacks: {
-    async jwt(token, user, account: AccounType, profile, isNewUser) {
+    async jwt(token, user, account :any , profile, isNewUser) {
       if (account?.accessToken) {
         token.accessToken = account.accessToken;
       }

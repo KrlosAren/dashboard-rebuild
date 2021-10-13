@@ -13,7 +13,7 @@ const Profile = () => {
   return (
     <div className='navbar__right'>
       <div className='right__user'>
-        <h4>@{session ? session.user.username : 'dummy'}</h4>
+        <h4>@{session ? session.extra.username : 'dummy'}</h4>
         <Image
           src={
             session

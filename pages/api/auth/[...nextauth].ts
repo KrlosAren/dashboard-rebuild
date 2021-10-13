@@ -42,8 +42,7 @@ const options: NextAuthOptions = {
     async session(session, ...args) {
       const extraInfo = args[0];
 
-      session.user = {
-        ...session.user,
+      session.extra = {
         username: extraInfo.username,
       };
 

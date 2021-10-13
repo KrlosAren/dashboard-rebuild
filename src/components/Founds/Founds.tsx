@@ -12,7 +12,6 @@ const Founds = () => {
 
   const [error, setErrors] = useState('');
 
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -80,7 +79,7 @@ export const DropdownAssets = ({
         onChange={onChange}
         className='button-secondary select-assets'
         name={name}>
-          <option>Select one...</option>
+        <option>Select one...</option>
         {options.map((option) => (
           <option value={option.id} key={option.id}>
             {option.symbol}

@@ -17,7 +17,7 @@ export const randomColor = () => {
 
 export const getTweets = async (query: string) => {
   const resp = await window.fetch(
-    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/tweets?query=${query}`
+    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/api/tweets?query=${query}`
   );
   const data = await resp.json();
   return data;

@@ -58,7 +58,7 @@ export default function Home({ providers, tweetsNew }) {
 export async function getServerSideProps(context: NextPageContext) {
   return {
     props: {
-      providers: await providers(context),
+      providers: await providers(),
       csrfToken: await csrfToken(context),
     },
   };

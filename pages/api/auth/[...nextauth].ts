@@ -2,6 +2,16 @@ import type { NextAuthOptions } from 'next-auth';
 import NextAuth from 'next-auth';
 import Providers from 'next-auth/providers';
 
+
+export interface ParamsType {
+  screen_name: string
+}
+
+export interface AccounType {
+  params: ParamsType
+  accessToken: string
+}
+
 /**
  * See all Next Auth configurations options at:
  * https://next-auth.js.org/configuration
@@ -18,24 +28,23 @@ const options: NextAuthOptions = {
   ],
   secret: process.env.SECRET,
   callbacks: {
-    async jwt(token, user, account, profile, isNewUser) {
+    async jwt(token, user, account: AccounType, profile, isNewUser) {
       if (account?.accessToken) {
         token.accessToken = account.accessToken;
       }
-      
+
       if (account?.params) {
-        token.username = account.params.screen_name
+        token.username = account.params.screen_name;
       }
 
       return token;
     },
     async session(session, ...args) {
-
-      const extraInfo = args[0]
+      const extraInfo = args[0];
 
       session.user = {
         ...session.user,
-        username: extraInfo.username
+        username: extraInfo.username,
       };
 
       return session;

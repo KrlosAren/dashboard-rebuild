@@ -8,15 +8,31 @@ const useInitialState = () => {
   const [hits, setHits] = useState<any>([]);
 
   const handleAddfounds = (payload) => {
-    const newInvesment = {
-      ...payload,
-      amount: Number(payload.amount),
-    };
-
-    setState({
-      ...state,
-      money: [...state.money, newInvesment],
-    });
+    const existFound = state.money.findIndex(
+      (element) => element.name === payload.name
+    );
+    if (existFound !== -1) {
+      const updatedMoney = [...state.money];
+      updatedMoney[existFound] = {
+        ...updatedMoney[existFound],
+        amount: updatedMoney[existFound].amount + Number(payload.amount),
+      };
+      setState({
+        ...state,
+        money: updatedMoney,
+      });
+    } else {
+      setState({
+        ...state,
+        money: [
+          ...state.money,
+          {
+            ...payload,
+            amount: Number(payload.amount),
+          },
+        ],
+      });
+    }
   };
 
   const handleSetTweets = (payload) => {

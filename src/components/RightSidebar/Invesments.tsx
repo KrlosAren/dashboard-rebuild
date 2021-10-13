@@ -1,8 +1,9 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { AppContext } from 'src/context/AppContext';
 import { randomColor } from 'src/utils';
 
+  const colors = Array.from(Array(100)).map(item => randomColor())
 
 const Complete = () => {
   const { state } = useContext(AppContext);
@@ -15,10 +16,7 @@ const Complete = () => {
     ((Number(i.amount) * 100) / totalAmount).toFixed(2)
   );
   
-  const colors = useCallback(
-    () => money.map((color) => randomColor()),
-    [money]
-  );
+
 
   const data = {
     labels: currency,

@@ -46,9 +46,6 @@ const Notification = () => {
         backgroundColor: '#fffffff5',
       },
     ],
-  };
-
-  const options = {
     responsive: true,
     maintainAspectRatio: false,
     scales: {
@@ -73,8 +70,12 @@ const Notification = () => {
     },
   };
 
+  const options = {
+
+  };
+
   const renderChart = (infoData) => {
-    return <Line ref={Chart} data={infoData} options={options} />;
+    return <Line ref={Chart} data={infoData}/>;
   };
 
   return (

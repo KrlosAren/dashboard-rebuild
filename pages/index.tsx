@@ -2,11 +2,11 @@ import { NextPageContext } from 'next';
 import { csrfToken, providers } from 'next-auth/client';
 import Head from 'next/head';
 import { useContext, useEffect, useState } from 'react';
-import { Loader } from 'react-feather';
 import { useSession } from 'src/auth/client';
 import AccessDenied from 'src/components/AccessDenied/AccessDenied';
 import Founds from 'src/components/Founds/Founds';
 import LeftSidebar from 'src/components/LeftSidebar/LeftSidebar';
+import Loader from 'src/components/Loader/Loader';
 import Main from 'src/components/MainCenter/Main';
 import Modal from 'src/components/Modal/Modal';
 import Navbar from 'src/components/Navbar/Navbar';
@@ -29,9 +29,6 @@ export default function Home({ providers, tweetsNew }) {
       });
   }, [query]);
 
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <>
@@ -39,18 +36,22 @@ export default function Home({ providers, tweetsNew }) {
         <title>Moen</title>
       </Head>
 
-      <div className='main'>
-        {state.isOpen && (
-          <Modal>
-            <Founds />
-          </Modal>
-        )}
-        {session === null && <AccessDenied providers={providers} />}
-        <Navbar query={query} setQuery={setQuery} />
-        <LeftSidebar />
-        <Main tweets={tweets} />
-        <RightSidebar />
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className='main'>
+          {state.isOpen && (
+            <Modal>
+              <Founds />
+            </Modal>
+          )}
+          {session === null && <AccessDenied providers={providers} />}
+          <Navbar query={query} setQuery={setQuery} />
+          <LeftSidebar />
+          <Main tweets={tweets} />
+          <RightSidebar />
+        </div>
+      )}
     </>
   );
 }

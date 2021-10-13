@@ -1,9 +1,9 @@
 const Loader = () => {
   return (
-    <div>
-      Loader
+    <div className='center__container'>
+      <div className='lds-dual-ring'></div>
     </div>
-  )
-}
+  );
+};
 
-export default Loader
+export default Loader;

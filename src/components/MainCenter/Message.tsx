@@ -1,30 +1,18 @@
 import Image from 'next/image';
 import React, { useContext } from 'react';
-import {
-  ChevronDown,
-  FilePlus,
-  Loader,
-  MapPin,
-  Search,
-  Send
-} from 'react-feather';
+import { ChevronDown, FilePlus, MapPin, Search, Send } from 'react-feather';
 import { useSession } from 'src/auth/client';
 import { AppContext } from 'src/context/AppContext';
 
 const Message = () => {
-  const [session, loading] = useSession();
-  const { state, handleSetAsset, handleSetListAssets } = useContext(AppContext);
+  const [session] = useSession();
+  const { state, handleSetAsset } = useContext(AppContext);
   const { assets, asset } = state;
 
   const handleAssetsChange = (e: React.FormEvent<HTMLInputElement>) => {
     const asset = e.currentTarget.value;
     handleSetAsset(asset);
   };
-
-
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <div className='timeline__msg'>

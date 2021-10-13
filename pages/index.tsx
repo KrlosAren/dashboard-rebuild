@@ -19,8 +19,7 @@ export default function Home({ providers, tweetsNew }) {
   const [query, setQuery] = useState('');
 
   console.log(session);
-  const { handleSetTweets, tweets, state, handleOpenModal, handleCloseModal } =
-    useContext(AppContext);
+  const { handleSetTweets, tweets, state } = useContext(AppContext);
 
   useEffect(() => {
     getTweets(query)

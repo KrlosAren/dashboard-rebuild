@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import news from '../newsData.json';
 import initialState from '../userData.json';
 
+
+
 const useInitialState = () => {
   const [state, setState] = useState(initialState);
   const [tweets, setTweets] = useState([]);

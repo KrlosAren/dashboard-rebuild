@@ -61,3 +61,28 @@ export interface ChannelProps {
 export interface ChannelType {
   channel: ChannelProps;
 }
+
+
+export interface userInitialType {
+  profile: Object;
+  channels: [];
+  money: [];
+  invesments: [];
+  events: [];
+  notifications: [];
+  contactRequest: [];
+  isOpen: boolean;
+  assets: [];
+  asset: string;
+}
+
+export interface initialStateType {
+  state: userInitialType;
+  handleSetTweets: () => {};
+  tweets: [];
+  handleAddfounds: () => {};
+  handleOpenModal: () => {};
+  handleCloseModal: () => {};
+  handleSetAsset: () => {};
+  handleSetListAssets: () => {};
+}

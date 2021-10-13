@@ -1,0 +1,9 @@
+@import "./event";
+@import "./friends";
+@import "./investements";
+
+.monitoring__container {
+  @include wh-100;
+  padding: $margin;
+  background-color: $color-tertiary;
+}

@@ -1,0 +1,27 @@
+.left__menu {
+  @include center-items;
+  @include wh-100;
+  justify-content: space-around;
+  font-size: $font-16;
+
+  div {
+    @include center-items;
+    width: 65%;
+    height: 100%;
+  }
+  img {
+    width: 40%;
+    height: auto;
+    border-radius: 50%;
+    &:hover {
+      @include shadow;
+      cursor: pointer;
+    }
+  }
+  i {
+    &:hover {
+      color: $color-notify;
+      cursor: pointer;
+    }
+  }
+}

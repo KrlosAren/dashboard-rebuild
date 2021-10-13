@@ -1,0 +1,16 @@
+.menu__options {
+  @include center-items;
+  background-color: $color-secondary;
+  color: $color-white;
+  padding: $margin * 1.5 $margin * 4;
+
+  &:hover {
+    color: $color-notify;
+    cursor: pointer;
+  }
+
+  h5 {
+    font-size: $font-10;
+    font-weight: $font-extra-light;
+  }
+}

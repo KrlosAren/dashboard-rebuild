@@ -1,0 +1,63 @@
+@import "./new";
+@import "./notifications";
+@import "./timeline";
+
+.main__container {
+  display: grid;
+  margin: auto;
+  gap: $margin;
+  grid-template-columns: 65% auto;
+}
+
+
+@media only screen and (max-width: 600px) {
+  .main__container {
+    grid-template-columns: 1fr;
+  }
+  
+  .main__rightsidebar {
+    display: none;
+  }
+  
+  .main__leftsidebar {
+    display: none;
+  }
+  
+  .main__center {
+    grid-column: 1/-1;
+  }
+}
+.container__absolute {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  background-color:rgba($color: #808080, $alpha: 0.2);
+
+
+  display: flex;
+  align-items: center;justify-content: center;
+}
+
+.twitter__button {
+  border: transparent;
+  background-color: $color-muted;
+  height: 50px;
+  width: 150px;
+  border-radius: 4px;
+  color: $color-secondary;
+  cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    color: $color-secondary;
+    background-color: $color-notify;
+  }
+}

@@ -1,0 +1,50 @@
+.event__container {
+  margin-top: $margin;
+
+  h2 {
+    margin: $margin 0;
+    color: $color-white;
+    font-weight: $font-light;
+  }
+}
+
+.event {
+  @include center-items;
+  padding: $margin * 0.5 $margin;
+  cursor: pointer;
+
+  &:hover > div {
+    border-bottom: 1px solid $color-notify;
+  }
+
+  &__date {
+    @include shadow;
+    @include center-items;
+    background-color: $color-secondary;
+    width: $margin * 5;
+    height: $margin * 5;
+    padding: $margin;
+    color: $color-white;
+    flex-direction: column;
+  }
+
+  &__info {
+    width: 60%;
+    font-size: $font-10;
+    color: $color-white;
+
+    i {
+      margin-left: $margin;
+      color: $color-notify;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    & p:last-child {
+      color: $color-notify;
+      cursor: pointer;
+    }
+  }
+}

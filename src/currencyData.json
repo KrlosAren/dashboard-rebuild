@@ -1,0 +1,39 @@
+  [
+    {
+      "crypto": "BTC",
+      "img": "https://logos-world.net/wp-content/uploads/2020/08/Bitcoin-Logo.png",
+      "updated_at": "2021-01-18T17:00:40+00:00",
+      "dataset": [
+        {
+          "year": 2020,
+          "price": 29391.78,
+          "currency": "US/$"
+        },
+        {
+          "year": 2019,
+          "price": 7188.46,
+          "currency": "US/$"
+        },
+        {
+          "year": 2018,
+          "price": 3869.46,
+          "currency": "US/$"
+        },
+        {
+          "year": 2017,
+          "price": 997.69,
+          "currency": "US/$"
+        },
+        {
+          "year": 2016,
+          "price": 434.46,
+          "currency": "US/$"
+        },
+        {
+          "year": 2015,
+          "price": 313.92,
+          "currency": "US/$"
+        }
+      ]
+    }
+  ]

@@ -1,0 +1,19 @@
+@import "./addContact";
+@import "./icons";
+@import "./menuApp";
+@import "./search";
+@import "./user";
+
+.navbar {
+  @include wh-100;
+  display: grid;
+  grid-template-columns: 15% 1fr 20%;
+  background-color: $color-secondary;
+  color: $color-white;
+
+  &__center {
+    @include center-items;
+    display: grid;
+    grid-template-columns: 60% 20% 1fr;
+  }
+}

@@ -1,0 +1,57 @@
+.center__search {
+  @include center-items;
+  @include wh-100;
+  justify-content: center;
+
+  i {
+    font-size: $font-12;
+    color: $color-secondary;
+  }
+
+  input[type="text"] {
+    height: $margin * 2.5;
+    border: 2px solid $color-secondary;
+    border-radius: $margin * 2;
+    width: 60%;
+    margin: 0 0.5em;
+    background-color: $color-primary;
+    padding: $margin;
+    color: $color-white;
+
+    &:focus {
+      color: $color-white;
+      padding: $margin;
+    }
+
+    &::placeholder {
+      color: $color-text-muted;
+    }
+  }
+
+  button {
+    width: 20%;
+    border: 1.5px solid $color-notify;
+    background-color: $color-primary;
+    color: $color-white;
+    height: $margin * 2.5;
+    border-radius: $margin * 2;
+
+    &:hover {
+      @include shadow;
+      cursor: pointer;
+    }
+
+    &:hover > i {
+      color: $color-notify;
+    }
+
+    i {
+      font-size: $font-10;
+      color: $color-white;
+    }
+
+    span {
+      margin: 0 0.5em;
+    }
+  }
+}

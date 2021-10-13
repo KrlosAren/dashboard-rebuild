@@ -1,0 +1,26 @@
+.investements {
+  width: 100%;
+  min-height: 150px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  
+
+  h2 {
+    font-weight: $font-light;
+    color: $color-white;
+  }
+}
+.investements__notfounds {
+  color: $color-white;
+  grid-row: 2/-1;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.investements__notfounds--chart {
+  width: auto;
+  height: 100%;
+}

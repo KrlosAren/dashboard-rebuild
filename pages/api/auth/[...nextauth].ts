@@ -46,6 +46,7 @@ const options: NextAuthOptions = {
         username: extraInfo.username,
       };
 
+
       return session;
     },
   },
